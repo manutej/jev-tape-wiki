@@ -1,9 +1,7 @@
-# jev-tape wiki (review site)
+# jev-tape wiki (complete review)
 
-Static review surface for the durable-execution spec wiki.
+Static reader of the full occupancy wiki + SPEC-v1 + Temporal contract + course modules.
 
-- Not a live TypeSafe qualifier
-- No API keys
-- Pin remains jev-1.13.0
+Not a live TypeSafe qualifier. No API keys.
 
-Deployed for review on Vercel.
+43 pages compiled into index.html.
