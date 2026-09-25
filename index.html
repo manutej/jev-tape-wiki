@@ -37,7 +37,7 @@ footer{max-width:1180px;margin:0 auto;padding:1rem 1.2rem 2rem;color:var(--faint
 </head>
 <body>
 <header>
-  <div class="kicker">Built from manutej/jev-tape/wiki @ 8859842 · not a live TypeSafe qualifier · no API keys</div>
+  <div class="kicker">Built from manutej/jev-tape/wiki @ ff11f58 · not a live TypeSafe qualifier · no API keys</div>
   <h1>jev-tape wiki</h1>
 </header>
 <div class="layout">
@@ -54,7 +54,7 @@ footer{max-width:1180px;margin:0 auto;padding:1rem 1.2rem 2rem;color:var(--faint
 <article id="benchmark-loop"><div class="kicker">page · benchmark-loop.md</div><h1>Benchmark the whole loop</h1><p>Measure wall time end-to-end, $ / successful task, decision count vs action count, fraction auto/review/block. Do not copy unverified third-party multipliers as claims.</p></article>
 <article id="bounded-forks"><div class="kicker">page · bounded-forks.md</div><h1>Bounded forks</h1><p>Put Jev at a fork whose options are a closed set. State → Choice + Score + Noul → route auto | review | block | escalate_human.</p>
 <p>A fork with an open option set is an LLM job, not a Jev job.</p></article>
-<article id="c10-human-gate"><div class="kicker">page · c10-human-gate.md</div><h1>C10 human gate</h1><p>Complete, Trash, and ResolveWaiting park on Signal <code>humanVerdict</code> <code>{compose|escalate|refuse}</code> even when the task gate is GREEN. Capture is the fast path. C10 is a Workflow park, not an Activity.</p></article>
+<article id="c10-human-gate"><div class="kicker">page · c10-human-gate.md</div><h1>C10 human gate</h1><p>Complete, Trash, ResolveWaiting, send, and merge-to-default park on Signal <code>humanVerdict</code> <code>{compose|escalate|refuse}</code> even when the task gate is GREEN. Capture is the fast path. C10 is a Workflow park, not an Activity. The list is the contract in <code>.jev/README.md</code>; the three domain Commands are <code>HUMAN_GATED_COMMANDS</code> in <code>src/domain.ts</code>.</p></article>
 <article id="claim-verify"><div class="kicker">page · claim-verify.md</div><h1>Claim verify</h1><p>Lane 2. Inputs: claim text + evidence snippets. Outputs: verified | contradicted | unsupported. Does not write the claim. Does not file the invoice.</p></article>
 <article id="closed-decisions"><div class="kicker">page · closed-decisions.md</div><h1>Closed decisions</h1><ol><li>primitive stays telemetry.</li><li>C10 includes Trash.</li><li>Refine heuristic stays code, not a seventeenth seat.</li></ol>
 <p>Still open: one live TypeSafe Capture before calling v1 final.</p></article>
@@ -67,7 +67,7 @@ footer{max-width:1180px;margin:0 auto;padding:1rem 1.2rem 2rem;color:var(--faint
 <article id="dual-axis"><div class="kicker">page · dual-axis.md</div><h1>Dual axes</h1><p>θ is P(fail-closed-gate is GREEN). top_prob_floor is pack peakedness. They are not the same number. Never set θ ≡ top_prob_floor.</p></article>
 <article id="fire"><div class="kicker">page · fire.md</div><h1>FIRE</h1><p>Unrepresentable: fifth Clarify arm; god-TaskWorkflow; one workflow per Inbox row; TypeSafe fused into the kernel; scoreFill as qualify; CreateHabit invented only on the tape; judge overriding local RED; jev-latest in production; TypeSafe again on replay.</p></article>
 <article id="first-ship"><div class="kicker">page · first-ship.md</div><h1>First ship</h1><p>JevCorrectness Capture of one Inbox item. Same process as a job. In-process twins until Temporal Cloud. npm run live is one Capture through startEngine, not a Cloud worker.</p></article>
-<article id="gmail-github-surfaces"><div class="kicker">page · gmail-github-surfaces.md</div><h1>Gmail and GitHub surfaces</h1><p>Two live connected surfaces. Historical sent mail and commits are calibration traces, not a weight update. Send and merge are TAPE + C10. Search and draft stay FAST.</p></article>
+<article id="gmail-github-surfaces"><div class="kicker">page · gmail-github-surfaces.md</div><h1>Gmail and GitHub surfaces</h1><p>Two live connected surfaces. Historical sent mail and commits are calibration traces, not a weight update. Send and merge-to-default are TAPE + C10 (one list: Complete, Trash, ResolveWaiting, send, merge-to-default). Search and draft stay FAST.</p></article>
 <article id="harness-vs-process"><div class="kicker">page · harness-vs-process.md</div><h1>Harness loop vs business process</h1><p>Same engine. Two clocks.</p>
 <p>Harness occupancy (seconds): screen untrusted tool output; route skill/tool/model; groundedness. Goal is fewer LLM calls.</p>
 <p>Process occupancy (hours to weeks): qualifyTask → propose → qualifyOutput → apply last; Waiting timer; C10 Signal. Goal is the write that cannot happen twice.</p></article>
@@ -97,7 +97,7 @@ footer{max-width:1180px;margin:0 auto;padding:1rem 1.2rem 2rem;color:var(--faint
 <ol><li>Code — schema, amounts, dates.</li><li>One TypeSafe POST — all independent questions together.</li><li>Generator — only if Choice said needs prose or a patch.</li><li>Temporal — only if the write must happen at most once, a human may take days, or a job must not rewind.</li></ol></article>
 <article id="speed-path"><div class="kicker">page · speed-path.md</div><h1>Speed path</h1><p>Path 0 code only. Path 1 one batched judge. Path 2 rank wide read narrow. Path 3 tape for wait / crash / irreversible write.</p></article>
 <article id="sqav-loop"><div class="kicker">page · sqav-loop.md</div><h1>SQAV loop</h1><p>On this tape: qualifyTask → propose in memory → qualifyOutput → applyCommand. Jev is not the Action.</p></article>
-<article id="surfaces-gmail-github"><div class="kicker">page · surfaces-gmail-github.md</div><h1>Gmail and GitHub surfaces</h1><p>Read tools stay path 0. <code>gmail_create_draft</code> and branch commits are propose after one batched qualify. <code>gmail_send_draft</code> and merge-to-default are apply-last + C10 when audience is client or money.</p>
+<article id="surfaces-gmail-github"><div class="kicker">page · surfaces-gmail-github.md</div><h1>Gmail and GitHub surfaces</h1><p>Read tools stay path 0. <code>gmail_create_draft</code> and branch commits are propose after one batched qualify. <code>gmail_send_draft</code> and merge-to-default are apply-last + C10 whatever the audience. C10 is one list: Complete, Trash, ResolveWaiting, send, merge-to-default.</p>
 <p>Self-mail and self-notes are path 0. Do not invent a second secretary.</p></article>
 <article id="temporal-activity"><div class="kicker">page · temporal-activity.md</div><h1>Temporal Activity seam</h1><p>TypeSafe is an Activity. Workflow code never calls /v1/systemone. Replay does not re-execute completed Activities.</p></article>
 <article id="temporal-replay"><div class="kicker">page · temporal-replay.md</div><h1>Replay must not call TypeSafe again</h1><p>Activity results already in Event History are reused, not recomputed. If TypeSafe sat in Workflow code, a RED Capture could come back GREEN on replay and apply.</p></article>
