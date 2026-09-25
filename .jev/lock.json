@@ -1,0 +1,10 @@
+{
+  "source": "manutej/jev-elder/core",
+  "version": "0.1.0",
+  "files": {
+    "jev-core.ts": "bd29f19d1db781d9af2008cf2eee2b4700f0f78579363e2f0d993c4e96be88ae",
+    "check.mjs": "ede1ecccbf64410e30a7e717a7e056af3729f8033df884c8469dc992069fb8cd",
+    "contracts.json": "7f864a5f20005745f1d225b635f00326feadcb0ce862b8319a29ab3c07f1de3d",
+    "README.md": "b252e9a3054eafbaf02c628ce4985e90bb6f4378139e3d2c69e5cbd3ff27e734"
+  }
+}

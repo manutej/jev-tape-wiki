@@ -1,0 +1,62 @@
+{
+  "version": "0.1.0",
+  "decided": "2026-09-25",
+  "decisions": "core/DECISIONS.md",
+  "model": {
+    "pin": "jev-1.13.0",
+    "unpinned_ids": ["jev-latest"],
+    "unpinned_allowed_only_for": "drift-measurement",
+    "gateway_id": "typesafe-ai/jev",
+    "endpoint": "https://api.typesafe.ai/v1/systemone"
+  },
+  "question_types": {
+    "noul": { "gateway_name": "boolean", "answer_field": "noul", "mid_band": [0.4, 0.6] },
+    "choice": { "min_criteria": 2, "max_criteria": 255 },
+    "score": { "min_levels": 2, "max_levels": 10 }
+  },
+  "key": {
+    "env": "TYPESAFE_API_KEY",
+    "missing": "fail closed: throw; never fake or default a verdict",
+    "never_in": ["committed files", "chat", "browser storage", "Apps Script", "URLs", "logs"]
+  },
+  "gate": {
+    "states": ["GREEN", "AMBER", "RED"],
+    "computed_by": "code",
+    "model_may_choose_verdict": false,
+    "recombine_on": "aggregate, never a conjunction of confidences (JEV-works L1)",
+    "local_red_is_final": true,
+    "aliases": {
+      "ACT": "GREEN", "REVIEW": "AMBER", "HOLD": "RED",
+      "true": "GREEN", "false": "GREEN", "escalate": "AMBER",
+      "ACCEPT": "GREEN", "REFUSE": "RED"
+    },
+    "theta": {
+      "shared_default": null,
+      "must_exceed": 0.5,
+      "provenance_required": true,
+      "smoke_only_never_applies": true
+    },
+    "noise_floor": { "boolean": 0.07, "score": 0.07, "choice": 0.15, "source": "JEV-works NETER.md P4 addendum" }
+  },
+  "human_gate": {
+    "id": "C10",
+    "parked_even_on_green": ["Complete", "Trash", "ResolveWaiting", "send", "merge-to-default"],
+    "why": ["irreversible", "money", "client audience"]
+  },
+  "clarify": {
+    "arms": ["NextAction", "Project", "Someday", "Waiting"],
+    "uncertain_is_an_arm": false,
+    "below_theta": "stay in Inbox"
+  },
+  "durable_record": {
+    "temporal": "optional for v0; specs say 'when enabled'",
+    "log_row": ["ts", "surface", "item_id", "model", "questions", "answers", "gate", "reasons", "action", "applied", "actor"]
+  },
+  "llm_role": "drafts text only when a gate asks; never decides a gate",
+  "naming": {
+    "TypeSafe Jev": "the hosted product model, pinned above",
+    "manutej/jev": "the operad kernel workbench",
+    "jev-domain": "the Digest Rust Item/Command/Clarify types",
+    "rule": "do not fuse"
+  }
+}

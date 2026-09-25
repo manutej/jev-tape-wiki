@@ -1,1 +1,123 @@
-PLACEHOLDER_WILL_FAIL
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>jev-tape wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--paper:#FAF7F2;--ink:#1C1A15;--soft:#4A453C;--faint:#7A7468;--rule:#D4CBBA;--blue:#2C4F6B;--fill:#F0EDE6;--bad:#A2362B}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "DM Sans",system-ui,sans-serif}
+a{color:var(--blue)}
+header{max-width:1180px;margin:0 auto;padding:1.2rem 1.2rem .8rem;border-bottom:1px solid var(--rule)}
+header h1{font:800 1.5rem/1.1 "Bricolage Grotesque",Georgia,serif;margin:.2rem 0 0}
+.kicker{font:11px/1.3 "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.layout{max-width:1180px;margin:0 auto;padding:1.2rem;display:grid;grid-template-columns:250px minmax(0,1fr);gap:1.5rem}
+nav{position:sticky;top:1rem;align-self:start;max-height:calc(100vh - 2rem);overflow:auto;font-size:14px}
+nav h3{font:600 12px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:1rem 0 .3rem}
+nav ul{list-style:none;margin:0;padding:0}
+nav li{padding:2px 0}
+article{display:none;background:#fff;border:1px solid var(--rule);border-radius:8px;padding:1.4rem 1.6rem 2rem;max-width:74ch}
+article:target,article.show{display:block}
+article h1{font:800 1.8rem/1.15 "Bricolage Grotesque",Georgia,serif;margin:.3rem 0 1rem}
+article h2,article h3{font-family:"Bricolage Grotesque",Georgia,serif;margin:1.4rem 0 .4rem}
+code{font:13px "JetBrains Mono",monospace;background:var(--fill);padding:1px 4px;border-radius:3px}
+pre{background:var(--fill);padding:.8rem 1rem;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:.6rem 0}
+th,td{border-bottom:1px solid var(--rule);padding:.4rem .5rem;text-align:left;vertical-align:top}
+blockquote{margin:.8rem 0;padding:.2rem 1rem;border-left:3px solid var(--rule);color:var(--soft)}
+.broken{color:var(--bad);text-decoration:underline dotted}
+footer{max-width:1180px;margin:0 auto;padding:1rem 1.2rem 2rem;color:var(--faint);font-size:13px;border-top:1px solid var(--rule)}
+@media (max-width:760px){.layout{grid-template-columns:1fr}nav{position:static;max-height:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Built from manutej/jev-tape/wiki @ 8859842 · not a live TypeSafe qualifier · no API keys</div>
+  <h1>jev-tape wiki</h1>
+</header>
+<div class="layout">
+<nav aria-label="Pages"><div class="sec"><h3>Engine</h3><ul><li><a href="#three-planes">Three planes</a></li><li><a href="#apply-last-loop">Apply-last loop</a></li><li><a href="#c10-human-gate">C10 human gate</a></li><li><a href="#fire">FIRE</a></li><li><a href="#completed-spec">Completed spec aspects</a></li><li><a href="#typesafe-activity">TypeSafe is an Activity</a></li><li><a href="#temporal-activity">Temporal Activity seam</a></li></ul></div><div class="sec"><h3>Speed + Ormus</h3><ul><li><a href="#speed-contract">Speed contract</a></li><li><a href="#harness-vs-process">Harness loop vs business process</a></li><li><a href="#ormus-jev">ormus-jev constructs</a></li><li><a href="#three-lanes">Three lanes</a></li></ul></div><div class="sec"><h3>Surfaces</h3><ul><li><a href="#gmail-github-surfaces">Gmail and GitHub surfaces</a></li></ul></div><div class="sec"><h3>Other pages</h3><ul><li><a href="#anti-jobs">Anti-jobs</a></li><li><a href="#batch-decisions">Batch decisions</a></li><li><a href="#benchmark-loop">Benchmark the whole loop</a></li><li><a href="#bounded-forks">Bounded forks</a></li><li><a href="#claim-verify">Claim verify</a></li><li><a href="#closed-decisions">Closed decisions</a></li><li><a href="#compose-answers">composeAnswers is code</a></li><li><a href="#confidence-routing">Confidence routing</a></li><li><a href="#context-screen">Context screen</a></li><li><a href="#decision-gate">Bounded decision gate</a></li><li><a href="#dual-axis">Dual axes</a></li><li><a href="#first-ship">First ship</a></li><li><a href="#home">jev-tape home</a></li><li><a href="#operad-questions">Operad names questions</a></li><li><a href="#ormus-anti-jobs">Ormus anti-jobs</a></li><li><a href="#ormus-jev-lanes">Ormus Jev three lanes</a></li><li><a href="#ormus-jev-suite">Ormus Jev suite map</a></li><li><a href="#ormus-rank-batch">Rank wide, batch questions</a></li><li><a href="#ormus-sqav">SQAV</a></li><li><a href="#pin-jev-1-13-0">Pin jev-1.13.0</a></li><li><a href="#process-workflows">One workflow per process</a></li><li><a href="#rank-wide-read-narrow">Rank wide, read narrow</a></li><li><a href="#spec-engine-fast">Execution engine spec (speed)</a></li><li><a href="#spec-speed-engine">Speed-first execution spec</a></li><li><a href="#speed-first">Speed-first cut</a></li><li><a href="#speed-path">Speed path</a></li><li><a href="#sqav-loop">SQAV loop</a></li><li><a href="#surfaces-gmail-github">Gmail and GitHub surfaces</a></li><li><a href="#temporal-replay">Replay must not call TypeSafe again</a></li><li><a href="#two-profiles">FAST path and TAPE path</a></li><li><a href="#typesafe-pin">TypeSafe pin jev-1.13.0</a></li></ul></div></nav>
+<main>
+<article id="anti-jobs"><div class="kicker">page · anti-jobs.md</div><h1>Anti-jobs</h1><p>Keep Jev out of math, writing, and irreversible execution.</p>
+<div class="tbl"><table><thead><tr><th>Job</th><th>Who</th></tr></thead><tbody><tr><td>Compute / determinism</td><td>Code</td></tr><tr><td>Create prose, plans, drafts</td><td>LLM</td></tr><tr><td>Decide next move at forks</td><td>Jev</td></tr><tr><td>Irreversible side effects</td><td>Human Approve or pre-agreed policy</td></tr></tbody></table></div>
+<p>Illegal: Jev drafting the email. Jev issuing the refund. Jev merging the PR. Using Jev as a calculator.</p></article>
+<article id="apply-last-loop"><div class="kicker">page · apply-last-loop.md</div><h1>Apply-last loop</h1><p><code>assertLegalCommand → qualifyTask → gate → propose in memory → qualifyOutput → gate → applyCommand</code>.</p>
+<p>Apply is the first domain write and only after both gates GREEN, or human compose.</p>
+<p>Illegal: apply then qualifyOutput; scoreFill as a live gate; TypeSafe on Temporal replay; jev-latest in production.</p></article>
+<article id="batch-decisions"><div class="kicker">page · batch-decisions.md</div><h1>Batch decisions</h1><p>Ask every typed question that shares a snapshot in one POST. Then act once. Sequential Q1→mutate→Q2 pays latency per question and drifts state.</p>
+<p>On this tape task pack and output pack are already batches. Do not split primitive-picker / fail-closed-gate / judge into three Activities.</p></article>
+<article id="benchmark-loop"><div class="kicker">page · benchmark-loop.md</div><h1>Benchmark the whole loop</h1><p>Measure wall time end-to-end, $ / successful task, decision count vs action count, fraction auto/review/block. Do not copy unverified third-party multipliers as claims.</p></article>
+<article id="bounded-forks"><div class="kicker">page · bounded-forks.md</div><h1>Bounded forks</h1><p>Put Jev at a fork whose options are a closed set. State → Choice + Score + Noul → route auto | review | block | escalate_human.</p>
+<p>A fork with an open option set is an LLM job, not a Jev job.</p></article>
+<article id="c10-human-gate"><div class="kicker">page · c10-human-gate.md</div><h1>C10 human gate</h1><p>Complete, Trash, and ResolveWaiting park on Signal <code>humanVerdict</code> <code>{compose|escalate|refuse}</code> even when the task gate is GREEN. Capture is the fast path. C10 is a Workflow park, not an Activity.</p></article>
+<article id="claim-verify"><div class="kicker">page · claim-verify.md</div><h1>Claim verify</h1><p>Lane 2. Inputs: claim text + evidence snippets. Outputs: verified | contradicted | unsupported. Does not write the claim. Does not file the invoice.</p></article>
+<article id="closed-decisions"><div class="kicker">page · closed-decisions.md</div><h1>Closed decisions</h1><ol><li>primitive stays telemetry.</li><li>C10 includes Trash.</li><li>Refine heuristic stays code, not a seventeenth seat.</li></ol>
+<p>Still open: one live TypeSafe Capture before calling v1 final.</p></article>
+<article id="completed-spec"><div class="kicker">page · completed-spec.md</div><h1>Completed spec aspects</h1><p>Frozen without a named v2: plane split; apply-last loop; TypeSafe-as-Activity; pin jev-1.13.0; composeAnswers as code; dual axis; process workflows not rows; C10 set; FIRE list; packs as a restriction of existing seats; twins as the executable stand-in until Cloud.</p>
+<p>Illegal: reopening packs or θ without v2; calling the wiki a judge; claiming a live TypeSafe call from this sandbox.</p></article>
+<article id="compose-answers"><div class="kicker">page · compose-answers.md</div><h1>composeAnswers is code</h1><p>TypeSafe returns an answer map. composeAnswers is deterministic code that turns that map into GREEN / AMBER / RED. Judge Choice cannot override a local RED. Mid-band noul on harness_can_branch demotes GREEN to AMBER.</p></article>
+<article id="confidence-routing"><div class="kicker">page · confidence-routing.md</div><h1>Confidence routing</h1><p>Auto when confidence is high and Choice/Noul clears policy. Review in the mid-band. Block / human when low. Low confidence is not ask Jev again. It is AMBER / Signal.</p></article>
+<article id="context-screen"><div class="kicker">page · context-screen.md</div><h1>Context screen</h1><p>Lane 3. Untrusted web/tool text → pass | review | block | skip before it enters the generator's context. Filter, not a security boundary. Replay must not re-ingest a recorded BLOCK as PASS.</p></article>
+<article id="decision-gate"><div class="kicker">page · decision-gate.md</div><h1>Bounded decision gate</h1><p>One shared snapshot. Choice + Score + Noul in one POST. Code routes auto | review | block | escalate_human. On this tape the gate is qualifyTask / qualifyOutput.</p></article>
+<article id="dual-axis"><div class="kicker">page · dual-axis.md</div><h1>Dual axes</h1><p>θ is P(fail-closed-gate is GREEN). top_prob_floor is pack peakedness. They are not the same number. Never set θ ≡ top_prob_floor.</p></article>
+<article id="fire"><div class="kicker">page · fire.md</div><h1>FIRE</h1><p>Unrepresentable: fifth Clarify arm; god-TaskWorkflow; one workflow per Inbox row; TypeSafe fused into the kernel; scoreFill as qualify; CreateHabit invented only on the tape; judge overriding local RED; jev-latest in production; TypeSafe again on replay.</p></article>
+<article id="first-ship"><div class="kicker">page · first-ship.md</div><h1>First ship</h1><p>JevCorrectness Capture of one Inbox item. Same process as a job. In-process twins until Temporal Cloud. npm run live is one Capture through startEngine, not a Cloud worker.</p></article>
+<article id="gmail-github-surfaces"><div class="kicker">page · gmail-github-surfaces.md</div><h1>Gmail and GitHub surfaces</h1><p>Two live connected surfaces. Historical sent mail and commits are calibration traces, not a weight update. Send and merge are TAPE + C10. Search and draft stay FAST.</p></article>
+<article id="harness-vs-process"><div class="kicker">page · harness-vs-process.md</div><h1>Harness loop vs business process</h1><p>Same engine. Two clocks.</p>
+<p>Harness occupancy (seconds): screen untrusted tool output; route skill/tool/model; groundedness. Goal is fewer LLM calls.</p>
+<p>Process occupancy (hours to weeks): qualifyTask → propose → qualifyOutput → apply last; Waiting timer; C10 Signal. Goal is the write that cannot happen twice.</p></article>
+<article id="home"><div class="kicker">Concept · home.md</div><h1>jev-tape home</h1><p>Durable execution for Block C work: TypeSafe <code>jev-1.13.0</code> answers seats; code gates; Temporal records. This wiki is the fact substrate. It is not a fifth product and not a judge.</p>
+<p>Ormus-jev constructs live here as doctrine, not new seats. Speed is skip + one POST + record only if the write can hurt.</p>
+<p>Related: <a href="#three-planes">Three planes</a> <a href="#apply-last-loop">Apply-last loop</a> <a href="#ormus-jev-lanes">Ormus Jev three lanes</a> <a href="#harness-vs-process">Harness loop vs business process</a> <a href="#surfaces-gmail-github">Gmail and GitHub surfaces</a> <a href="#c10-human-gate">C10 human gate</a> <a href="#completed-spec">Completed spec aspects</a></p></article>
+<article id="operad-questions"><div class="kicker">page · operad-questions.md</div><h1>Operad names questions</h1><p>from-seats.ts compiles existing seats into a System One request. It does not rewrite prompts. TypeSafe answers. The operad does not fetch.</p></article>
+<article id="ormus-anti-jobs"><div class="kicker">page · ormus-anti-jobs.md</div><h1>Ormus anti-jobs</h1><p>Keep Jev out of math, writing, and irreversible execution. Illegal: asking Jev to draft the email it is gating; asking Jev to sum amounts; calling System One from inside the Activity that POSTs Stripe / SMTP / git push.</p></article>
+<article id="ormus-jev-lanes"><div class="kicker">page · ormus-jev-lanes.md</div><h1>Ormus Jev three lanes</h1><p>Public Ormus doctrine names three places Jev is allowed to sit. They are not seats and not Temporal Workflows.</p>
+<ol><li>Decision gate — before send / pay / merge / cancel.</li><li>Claim verify — claim + evidence → verified | contradicted | unsupported.</li><li>Context screen — untrusted text → pass | review | block | skip.</li></ol>
+<p>Code computes, LLMs create, Jev decides, humans approve irreversible side effects.</p></article>
+<article id="ormus-jev-suite"><div class="kicker">page · ormus-jev-suite.md</div><h1>Ormus Jev suite map</h1><p>Thin public teaching repos. Hub stays ormus-jev. This tape does not flatten them into seats.</p>
+<div class="tbl"><table><thead><tr><th>Repo</th><th>Tape mapping</th></tr></thead><tbody><tr><td>jev-primitives</td><td>Choice / Score / Noul</td></tr><tr><td>jev-batch-decisions</td><td>task/output packs, one POST</td></tr><tr><td>jev-decision-gate</td><td>Choice options in a pack</td></tr><tr><td>jev-rank-wide-read-narrow</td><td>two Activities when an LLM follows</td></tr><tr><td>jev-state-questions-action-verify</td><td>qualify → propose → qualify → apply</td></tr><tr><td>jev-anti-jobs</td><td>FIRE</td></tr><tr><td>jev-confidence-routing</td><td>composeAnswers</td></tr><tr><td>jev-claim-verify</td><td>lane 2 pack</td></tr><tr><td>jev-context-screen</td><td>lane 3 pack</td></tr></tbody></table></div></article>
+<article id="ormus-jev"><div class="kicker">page · ormus-jev.md</div><h1>ormus-jev constructs</h1><p>Public teaching pack: code computes, LLMs create, Jev decides, humans approve irreversible side effects. Hub: HermeticOrmus/ormus-jev. This tape does not flatten that hub into a product name.</p>
+<p>Three lanes: decision gate, claim verify, context screen. Occupancy here is doctrine, not new seats.</p></article>
+<article id="ormus-rank-batch"><div class="kicker">page · ormus-rank-batch.md</div><h1>Rank wide, batch questions</h1><p>Independent questions go in one POST. Rank wide, read narrow: shortlist cheap, spend the generator only on winners.</p></article>
+<article id="ormus-sqav"><div class="kicker">page · ormus-sqav.md</div><h1>SQAV</h1><p>State is a shared snapshot. Questions are batched. Action is code/tools/LLM, not Jev. Verify is qualifyOutput then apply-last or Signal.</p></article>
+<article id="pin-jev-1-13-0"><div class="kicker">page · pin-jev-1-13-0.md</div><h1>Pin jev-1.13.0</h1><p>Production requests set model: &quot;jev-1.13.0&quot;. jev-latest will move. response.model must equal the pin or the Activity is non-retryable.</p></article>
+<article id="process-workflows"><div class="kicker">page · process-workflows.md</div><h1>One workflow per process</h1><p>Legal: JevCorrectnessWorkflow, WaitingWorkflow, HabitWorkflow, SomedayReviewWorkflow. Illegal: one workflow per Inbox row; god-TaskWorkflow; fifth Clarify arm; CreateHabit invented only on the tape.</p></article>
+<article id="rank-wide-read-narrow"><div class="kicker">page · rank-wide-read-narrow.md</div><h1>Rank wide, read narrow</h1><p>Score or classify many candidates with TypeSafe. Spend LLM / tool / human compute only on the shortlist.</p></article>
+<article id="spec-engine-fast"><div class="kicker">page · spec-engine-fast.md</div><h1>Execution engine spec (speed)</h1><p>Classify in one POST, route in code, generate only if named, record only if the write can hurt.</p>
+<p>Stage A code. Stage B one TypeSafe POST. Stage C branch. Stage D tape for irreversible writes.</p></article>
+<article id="spec-speed-engine"><div class="kicker">page · spec-speed-engine.md</div><h1>Speed-first execution spec</h1><p>A harness turn stays under one TypeSafe round-trip. A business process does not pay that round-trip twice. Measure TypeSafe POSTs per write (target ≤2).</p></article>
+<article id="speed-contract"><div class="kicker">page · speed-contract.md</div><h1>Speed contract</h1><p>Skip the LLM when a typed question will do. Batch every question that shares a snapshot. Spend expensive compute only on a shortlist. Record the answer so a crash cannot pay for it again.</p>
+<p>Ladder: code → one TypeSafe POST → LLM generate → Temporal park.</p></article>
+<article id="speed-first"><div class="kicker">page · speed-first.md</div><h1>Speed-first cut</h1><p>Four speeds, cheapest first. Climb only when needed.</p>
+<ol><li>Code — schema, amounts, dates.</li><li>One TypeSafe POST — all independent questions together.</li><li>Generator — only if Choice said needs prose or a patch.</li><li>Temporal — only if the write must happen at most once, a human may take days, or a job must not rewind.</li></ol></article>
+<article id="speed-path"><div class="kicker">page · speed-path.md</div><h1>Speed path</h1><p>Path 0 code only. Path 1 one batched judge. Path 2 rank wide read narrow. Path 3 tape for wait / crash / irreversible write.</p></article>
+<article id="sqav-loop"><div class="kicker">page · sqav-loop.md</div><h1>SQAV loop</h1><p>On this tape: qualifyTask → propose in memory → qualifyOutput → applyCommand. Jev is not the Action.</p></article>
+<article id="surfaces-gmail-github"><div class="kicker">page · surfaces-gmail-github.md</div><h1>Gmail and GitHub surfaces</h1><p>Read tools stay path 0. <code>gmail_create_draft</code> and branch commits are propose after one batched qualify. <code>gmail_send_draft</code> and merge-to-default are apply-last + C10 when audience is client or money.</p>
+<p>Self-mail and self-notes are path 0. Do not invent a second secretary.</p></article>
+<article id="temporal-activity"><div class="kicker">page · temporal-activity.md</div><h1>Temporal Activity seam</h1><p>TypeSafe is an Activity. Workflow code never calls /v1/systemone. Replay does not re-execute completed Activities.</p></article>
+<article id="temporal-replay"><div class="kicker">page · temporal-replay.md</div><h1>Replay must not call TypeSafe again</h1><p>Activity results already in Event History are reused, not recomputed. If TypeSafe sat in Workflow code, a RED Capture could come back GREEN on replay and apply.</p></article>
+<article id="three-lanes"><div class="kicker">page · three-lanes.md</div><h1>Three lanes</h1><ol><li>Decision gate — before send / pay / merge / cancel.</li><li>Claim verify — claim + evidence → verified | contradicted | unsupported.</li><li>Context screen — untrusted text → pass | review | block | skip.</li></ol></article>
+<article id="three-planes"><div class="kicker">page · three-planes.md</div><h1>Three planes</h1><p>Three planes share a seam. They do not share a brain. Operad names questions. TypeSafe answers them. Temporal remembers the answer across crash, wait, and replay.</p>
+<ul><li>Operad / seats.ts owns question names.</li><li>TypeSafe owns one answer map per gate at pin jev-1.13.0.</li><li>Temporal owns Event History, Activity retry, Signal, timer, ContinueAsNew.</li></ul>
+<p>Operad must not fetch. TypeSafe must not apply. Temporal must not invent questions.</p></article>
+<article id="two-profiles"><div class="kicker">page · two-profiles.md</div><h1>FAST path and TAPE path</h1><p>FAST: next line is a switch. No irreversible write. Skip Temporal. TAPE: next line is a write that must not happen twice. Two gates, apply last, optional C10.</p></article>
+<article id="typesafe-activity"><div class="kicker">page · typesafe-activity.md</div><h1>TypeSafe is an Activity</h1><p><code>POST /v1/systemone</code> is a non-deterministic effect. It lives in an Activity so the result is written once to Event History.</p>
+<p>qualifyTask / qualifyOutput call TypeSafe. Workflow isolate must not fetch. Replay does not POST again.</p></article>
+<article id="typesafe-pin"><div class="kicker">page · typesafe-pin.md</div><h1>TypeSafe pin jev-1.13.0</h1><p><code>POST https://api.typesafe.ai/v1/systemone</code> with <code>model: jev-1.13.0</code>. Questions are noul | choice | score.</p>
+<p><code>jev-latest</code> moves. Production on this tape forbids it. No key / 401 → fail closed. No local fake. 422 or response.model drift → non-retryable.</p></article>
+</main>
+</div>
+<footer>43 pages · 0 broken link targets · regenerate with <code>node scripts/build.mjs ../jev-tape</code></footer>
+<script>
+(function(){
+  function show(){var id=location.hash.slice(1);var a=id&&document.getElementById(id);document.querySelectorAll("article.show").forEach(function(x){x.classList.remove("show")});(a&&a.tagName==="ARTICLE"?a:document.getElementById("home")||document.querySelector("article")).classList.add("show");}
+  addEventListener("hashchange",show);show();
+})();
+</script>
+</body>
+</html>
